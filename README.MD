@@ -1,4 +1,4 @@
-# So You Think You Know  Appium Because You Know Selenium
+# So You Think You Know  Appium  Because You Know Selenium
 
 This is the demo repo that belongs to my 2 talks at:
 
