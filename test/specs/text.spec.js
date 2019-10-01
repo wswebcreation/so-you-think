@@ -10,15 +10,6 @@ describe('Getting text', () => {
         $('~Swipe-screen').waitForDisplayed(15000);
     });
 
-    it('should NOT be able to get the text of iOS and Android in the same way', () => {
-        const firstCard = $$('~card')[0].$('~slideTextContainer');
-        const text = firstCard.getText();
-
-        console.log(`${driver.isIOS ? 'iOS' : 'Failing Android'} getText =`, `'${text}'`);
-
-        expect(text).toEqual('FULLY OPEN SOURCE WebdriverIO is fully open source and can be found on GitHub');
-    });
-
     it('should BE able to get the text of iOS and Android in the same way', () => {
         const firstCard = $$('~card')[0].$('~slideTextContainer');
 
