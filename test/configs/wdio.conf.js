@@ -1,3 +1,5 @@
+const {join} = require('path');
+
 exports.config = {
     //
     // ====================
@@ -12,7 +14,7 @@ exports.config = {
     specs: [
         './test/specs/**/*.js'
     ],
-    suites:{
+    suites: {
         text: ['./test/specs/text.spec.js'],
     },
     //
@@ -38,8 +40,7 @@ exports.config = {
             // https://github.com/appium/appium/releases/tag/v1.13.0
             'appium:automationName': 'XCUITest',
             // The path to the app
-            // 'appium:app': join(process.cwd(), './apps/iOS-Simulator-NativeDemoApp-0.3.0.app.zip'),
-            'appium:app': '/Users/wimselles/Git/wdio-native-demo-app/ios/build/wdioDemoApp/Build/Products/Debug-iphonesimulator/wdioDemoApp.app',
+            'appium:app': join(process.cwd(), './apps/wdioDemoApp.zip'),
             // Read the reset strategies very well, they differ per platform, see
             // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
             'appium:noReset': true,
@@ -62,8 +63,7 @@ exports.config = {
             // https://github.com/appium/appium/releases/tag/v1.13.0
             'appium:automationName': 'UiAutomator2',
             // The path to the app
-            // 'appium:app': join(process.cwd(), './apps/Android-NativeDemoApp-0.3.0.apk'),
-            'appium:app': '/Users/wimselles/Git/wdio-native-demo-app/android/app/build/outputs/apk/debug/app-debug.apk',
+            'appium:app': join(process.cwd(), './apps/wdioDemoApp.apk'),
             // Read the reset strategies very well, they differ per platform, see
             // http://appium.io/docs/en/writing-running-appium/other/reset-strategies/
             'appium:noReset': true,
