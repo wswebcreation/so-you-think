@@ -14,7 +14,8 @@ describe('Getting text', () => {
         const firstCard = $$('~card')[0].$('~slideTextContainer');
 
         // @TODO: Fix this implementation to make it cross-platform
-        const text = firstCard.getText();
+        // const text = firstCard.getText();
+        const text = getTextOfElement(firstCard);
 
         console.log(`${driver.isIOS ? 'iOS' : 'Fixed Android'} getText =`, `'${text}'`);
 
@@ -22,3 +23,9 @@ describe('Getting text', () => {
 
     });
 });
+
+function getTextOfElement(element){
+    return driver.isIOS ?
+        element.getText() :
+        element.$$('*//android.widget.TextView').reduce((currentValue, el) => `${currentValue} ${el.getText()}`, '').trim()
+}
